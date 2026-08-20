@@ -23,38 +23,48 @@ st.markdown("""
 .them {margin-right: 20%;}
 .stButton>button {background: linear-gradient(90deg, #A855F7 0%, #00F0FF 100%); color: white; border: none; border-radius: 10px; font-weight: 700; width: 100%;}
 
-/* FLOATING AI BUTTON */
-.ai-float-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-    background: linear-gradient(90deg, #A855F7 0%, #00F0FF 100%);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 28px;
-    cursor: pointer;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+/* FLOATING AI BUTTON - SMALLER */
+div.stButton > button[key="ai_toggle_btn"] {
+    position: fixed !important;
+    bottom: 15px !important;  /* was 90px, now 15px */
+    right: 15px !important;   /* was 20px, now 15px */
+    z-index: 9999 !important;
+    background: linear-gradient(90deg, #A855F7 0%, #00F0FF 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 50px !important;   /* was 60px */
+    height: 50px !important;  /* was 60px */
+    font-size: 22px !important; /* was 28px */
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.6) !important;
+    padding: 0 !important;
 }
-/* FLOATING AI WINDOW */
+
+/* FLOATING AI WINDOW - MINIMIZED FOR MOBILE */
 .ai-float-window {
     position: fixed;
-    bottom: 90px;
-    right: 20px;
-    width: 350px;
-    height: 500px;
+    bottom: 75px;    /* button height + 15px gap */
+    right: 15px;
+    width: 300px;    /* was 350px */
+    max-width: 85vw; /* won't go off screen */
+    height: 400px;   /* was 500px */
+    max-height: 65vh; /* fits on small screens */
     z-index: 9998;
-    background: rgba(18, 10, 46, 0.95);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 240, 255, 0.3);
-    border-radius: 20px;
-    padding: 15px;
+    background: rgba(10, 5, 30, 0.98);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    border-radius: 18px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
 }
+
+/* Add padding to main app so content doesn't hide behind button */
+.stApp {
+    padding-bottom: 80px !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
